@@ -20,7 +20,7 @@ Usage
 ```hcl
 module "demo_sg_ssh" {
   source = "github.com/stack42/terraform_aws_sg//sg_ssh"
-  vpc_id = "${module.demo_vpc.vpc_id}"
+  vpc_id = "vpc_id"
   security_group_name = "${var.name}-ssh"
   allowed_cidr_blocks = ["whatever-ip/32"]
   allowed_security_groups = []
