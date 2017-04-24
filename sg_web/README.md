@@ -21,7 +21,7 @@ Usage
 
 
 ```hcl
-module "demo_sg_ssh" {
+module "demo_sg_web" {
   source = "github.com/stack42/terraform_aws_sg//sg_web"
   vpc_id = "vpc_id"
   security_group_name = "${var.name}-web"
