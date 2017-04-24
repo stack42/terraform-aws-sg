@@ -3,8 +3,9 @@ resource "aws_security_group" "main_security_group" {
   vpc_id = "${var.vpc_id}"
 
   tags {
-    Name      = "${var.name}"
-    terraform = "true"
+    Name        = "${var.name}"
+    Environment = "${var.environment}"
+    terraform   = "true"
   }
 
   ingress {
