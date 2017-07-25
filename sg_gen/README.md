@@ -32,6 +32,7 @@ module "demo_sg_something" {
   allowed_cidr_blocks     = ["whatever-ip/32"]
   allowed_security_groups = []
   name                    = "${var.name}"
+  environment             = "${var.environment}"
 }
 ```
 
