@@ -16,19 +16,18 @@ resource "aws_security_group" "main_security_group" {
     security_groups = ["${var.allowed_security_groups}"]
     self            = "${var.self}"
   }
-}
+  # Allow ICMP Echo Request and Echo Reply (ping) - http://shouldiblockicmp.com/
+  ingress {
+    from_port   = 8
+    to_port     = 0
+    protocol    = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-# Allow ICMP Echo Request and Echo Reply (ping) - http://shouldiblockicmp.com/
-ingress {
-  from_port   = 8
-  to_port     = 0
-  protocol    = "icmp"
-  cidr_blocks = ["0.0.0.0/0"]
-}
-
-egress {
-  from_port   = 0
-  to_port     = 0
-  protocol    = "-1"
-  cidr_blocks = ["0.0.0.0/0"]
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
