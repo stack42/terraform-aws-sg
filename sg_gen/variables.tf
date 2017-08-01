@@ -6,7 +6,9 @@ variable "environment" {}
 
 variable "security_group_name" {}
 
-variable "port" {}
+variable "from_port" {}
+
+variable "to_port" {}
 
 variable "protocol" {}
 
