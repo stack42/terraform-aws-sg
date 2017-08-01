@@ -9,8 +9,8 @@ resource "aws_security_group" "main_security_group" {
   }
 
   ingress {
-    from_port       = "${var.port}"
-    to_port         = "${var.port}"
+    from_port       = "${var.from_port}"
+    to_port         = "${var.to_port}"
     protocol        = "${var.protocol}"
     cidr_blocks     = ["${var.allowed_cidr_blocks}"]
     security_groups = ["${var.allowed_security_groups}"]
