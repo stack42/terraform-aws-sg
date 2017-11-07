@@ -16,7 +16,7 @@ resource "aws_security_group" "main_security_group" {
     security_groups = ["${var.allowed_security_groups}"]
     self            = "${var.self}"
   }
-}
+
 
 # Allow ICMP Echo Request and Echo Reply (ping) - http://shouldiblockicmp.com/
 ingress {
