@@ -15,11 +15,11 @@ variable "to_port" {}
 variable "protocol" {}
 
 variable "allowed_cidr_blocks" {
-  type = "list"
+  type = list
 }
 
 variable "allowed_security_groups" {
-  type = "list"
+  type = list(string)
 }
 
 # To be commented - to explain why default is false.
